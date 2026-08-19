@@ -54,7 +54,7 @@ function Opening() {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-background"
+      className="absolute inset-0 z-50 flex items-center justify-center bg-background"
       style={{ animation: "veil-up 900ms 1.7s cubic-bezier(0.7,0,0.2,1) forwards" }}
       aria-hidden
     >
@@ -79,11 +79,11 @@ function Index() {
   }
 
   return (
-    <main>
+    <main className="relative">
       <Opening />
 
       {/* 2 — Welcome */}
-      <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+      <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-center md:min-h-[844px]">
         <p className="eyebrow">Together with their families</p>
         <h1 className="script mt-6 text-6xl text-primary">Aarav &amp; Meera</h1>
         <div className="mx-auto my-8 h-px w-20 bg-gold" />
