@@ -11,7 +11,7 @@ export function PhoneFrame({ children }: { children: ReactNode }) {
       <div className="md:hidden">{children}</div>
 
       {/* Desktop / tablet: iPhone mockup on an animated backdrop */}
-      <div className="relative hidden min-h-screen items-center justify-center overflow-hidden bg-secondary/60 p-8 md:flex">
+      <div className="relative hidden h-screen items-center justify-center overflow-hidden bg-secondary/60 md:flex">
         <div className="pointer-events-none absolute inset-0" aria-hidden>
           <div className="orb orb-a" />
           <div className="orb orb-b" />
@@ -19,7 +19,7 @@ export function PhoneFrame({ children }: { children: ReactNode }) {
           <div className="petals" />
         </div>
 
-        <div className="relative">
+        <div className="phone-scale relative">
           <div className="rounded-[3.2rem] border border-border bg-ink p-[14px] shadow-[0_40px_90px_-20px_rgba(0,0,0,0.45)]">
             <div className="relative h-[844px] w-[390px] overflow-hidden rounded-[2.5rem] bg-background">
               {/* notch */}
