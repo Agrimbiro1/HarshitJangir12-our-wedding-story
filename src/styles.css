@@ -175,6 +175,14 @@
   color: var(--color-muted-foreground);
 }
 
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @keyframes veil-up {
   to {
     transform: translateY(-100%);
