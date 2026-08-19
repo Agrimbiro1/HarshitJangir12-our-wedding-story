@@ -54,13 +54,13 @@ function Opening() {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-background"
+      className="absolute inset-0 z-50 flex items-center justify-center bg-background"
       style={{ animation: "veil-up 900ms 1.7s cubic-bezier(0.7,0,0.2,1) forwards" }}
       aria-hidden
     >
       <div className="text-center" style={{ animation: "soft-rise 1.2s ease-out both" }}>
         <p className="eyebrow">The wedding of</p>
-        <p className="script mt-4 text-5xl md:text-7xl text-primary">Aarav &amp; Meera</p>
+        <p className="script mt-4 text-5xl text-primary">Aarav &amp; Meera</p>
         <div
           className="mx-auto mt-6 h-px w-24 bg-gold origin-left"
           style={{ animation: "line-grow 1.2s 0.5s ease-out both" }}
@@ -79,15 +79,15 @@ function Index() {
   }
 
   return (
-    <main>
+    <main className="relative">
       <Opening />
 
       {/* 2 — Welcome */}
-      <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+      <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-center md:min-h-[844px]">
         <p className="eyebrow">Together with their families</p>
-        <h1 className="script mt-6 text-6xl md:text-8xl text-primary">Aarav &amp; Meera</h1>
+        <h1 className="script mt-6 text-6xl text-primary">Aarav &amp; Meera</h1>
         <div className="mx-auto my-8 h-px w-20 bg-gold" />
-        <p className="font-display text-2xl md:text-3xl">4 December 2026 · Jaipur</p>
+        <p className="font-display text-2xl">4 December 2026 · Jaipur</p>
         <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
           We invite you to share in the joy of our wedding, and in the small moments
           that will make it a lifetime.
@@ -104,7 +104,7 @@ function Index() {
           loading="lazy"
           className="mx-auto mb-10 w-full max-w-xl object-cover"
         />
-        <div className="grid gap-10 md:grid-cols-2 text-center">
+        <div className="grid gap-10 text-center">
           <div>
             <h3 className="text-2xl">Aarav Sharma</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -122,7 +122,7 @@ function Index() {
 
       {/* 4 — Events */}
       <Section id="events" eyebrow="Celebrations" title="Events">
-        <div className="grid gap-px bg-border sm:grid-cols-2">
+        <div className="grid gap-px bg-border">
           {events.map((ev) => (
             <div key={ev.name} className="bg-background px-6 py-10">
               <h3 className="text-2xl text-primary">{ev.name}</h3>
@@ -136,7 +136,7 @@ function Index() {
 
       {/* 5 — Family */}
       <Section id="family" eyebrow="With Blessings Of" title="Our Families" tone="muted">
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-12">
           <div>
             <p className="eyebrow">Groom&apos;s Family</p>
             <p className="mt-4 font-display text-xl">Mr. Rajesh Sharma</p>
@@ -159,7 +159,7 @@ function Index() {
 
       {/* 7 — Memories */}
       <Section id="memories" eyebrow="Our Story" title="Memories" tone="muted">
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4">
           {memories.map((m) => (
             <img
               key={m.alt}
@@ -242,7 +242,7 @@ function Index() {
 
       {/* 11 — Closing */}
       <footer className="border-t border-border px-6 py-24 text-center">
-        <p className="script text-5xl md:text-6xl text-primary">See you there</p>
+        <p className="script text-5xl text-primary">See you there</p>
         <div className="mx-auto my-6 h-px w-16 bg-gold" />
         <p className="eyebrow">Aarav &amp; Meera · 4 December 2026 · Jaipur</p>
       </footer>
