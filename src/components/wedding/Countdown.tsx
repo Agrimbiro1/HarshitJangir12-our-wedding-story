@@ -28,10 +28,10 @@ export function Countdown() {
   ] as const;
 
   return (
-    <div className="grid grid-cols-4 gap-3 md:gap-6">
+    <div className="grid grid-cols-4 gap-3">
       {items.map(([label, value]) => (
         <div key={label} className="border border-border bg-card px-2 py-6">
-          <div className="font-display text-4xl md:text-5xl text-primary tabular-nums">
+          <div className="font-display text-4xl text-primary tabular-nums">
             {String(value).padStart(2, "0")}
           </div>
           <div className="eyebrow mt-2">{label}</div>
