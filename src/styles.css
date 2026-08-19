@@ -200,3 +200,88 @@
     transform: scaleX(1);
   }
 }
+
+/* Ambient backdrop behind the phone frame */
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.55;
+}
+
+.orb-a {
+  width: 34rem;
+  height: 34rem;
+  left: -8rem;
+  top: -6rem;
+  background: var(--gold);
+  animation: float-a 18s ease-in-out infinite;
+}
+
+.orb-b {
+  width: 28rem;
+  height: 28rem;
+  right: -6rem;
+  bottom: -8rem;
+  background: var(--primary);
+  opacity: 0.25;
+  animation: float-b 22s ease-in-out infinite;
+}
+
+.orb-c {
+  width: 22rem;
+  height: 22rem;
+  right: 20%;
+  top: 10%;
+  background: var(--accent);
+  opacity: 0.35;
+  animation: float-a 26s ease-in-out infinite reverse;
+}
+
+.petals {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, var(--gold) 2px, transparent 2px),
+    radial-gradient(circle, var(--accent) 1.5px, transparent 1.5px);
+  background-size: 220px 220px, 160px 160px;
+  background-position: 0 0, 80px 60px;
+  opacity: 0.25;
+  animation: petal-drift 40s linear infinite;
+}
+
+@keyframes float-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(6rem, 4rem, 0) scale(1.12);
+  }
+}
+
+@keyframes float-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(-5rem, -4rem, 0) scale(0.92);
+  }
+}
+
+@keyframes petal-drift {
+  from {
+    background-position: 0 0, 80px 60px;
+  }
+  to {
+    background-position: 220px 440px, 300px 380px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb,
+  .petals {
+    animation: none;
+  }
+}
