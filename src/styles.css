@@ -201,6 +201,13 @@
   }
 }
 
+/* Scale the iPhone mockup so it always fits the desktop viewport height.
+   Frame outer size: 390 + 2*14 = 418w, 844 + 2*14 = 872h */
+.phone-scale {
+  transform: scale(min(1, calc((100vh - 48px) / 872)));
+  transform-origin: center center;
+}
+
 /* Ambient backdrop behind the phone frame */
 .orb {
   position: absolute;
