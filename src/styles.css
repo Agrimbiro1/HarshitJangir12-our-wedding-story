@@ -201,11 +201,36 @@
   }
 }
 
-/* Scale the iPhone mockup so it always fits the desktop viewport height.
-   Frame outer size: 390 + 2*14 = 418w, 844 + 2*14 = 872h */
+/* Keep the complete 418 × 872 phone visible, including its top and bottom.
+   Height-based steps are used because dividing CSS lengths inside scale()
+   is not consistently supported by embedded preview browsers. */
 .phone-scale {
-  transform: scale(min(1, calc((100vh - 48px) / 872)));
+  transform: scale(1);
   transform-origin: center center;
+}
+
+@media (max-height: 920px) and (min-width: 768px) {
+  .phone-scale { transform: scale(0.95); }
+}
+
+@media (max-height: 850px) and (min-width: 768px) {
+  .phone-scale { transform: scale(0.86); }
+}
+
+@media (max-height: 780px) and (min-width: 768px) {
+  .phone-scale { transform: scale(0.78); }
+}
+
+@media (max-height: 710px) and (min-width: 768px) {
+  .phone-scale { transform: scale(0.7); }
+}
+
+@media (max-height: 640px) and (min-width: 768px) {
+  .phone-scale { transform: scale(0.62); }
+}
+
+@media (max-height: 570px) and (min-width: 768px) {
+  .phone-scale { transform: scale(0.54); }
 }
 
 /* Ambient backdrop behind the phone frame */
