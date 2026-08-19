@@ -122,7 +122,7 @@ function Index() {
 
       {/* 4 — Events */}
       <Section id="events" eyebrow="Celebrations" title="Events">
-        <div className="grid gap-px bg-border sm:grid-cols-2">
+        <div className="grid gap-px bg-border">
           {events.map((ev) => (
             <div key={ev.name} className="bg-background px-6 py-10">
               <h3 className="text-2xl text-primary">{ev.name}</h3>
@@ -159,7 +159,7 @@ function Index() {
 
       {/* 7 — Memories */}
       <Section id="memories" eyebrow="Our Story" title="Memories" tone="muted">
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4">
           {memories.map((m) => (
             <img
               key={m.alt}
