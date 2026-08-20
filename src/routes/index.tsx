@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Section } from "@/components/wedding/Section";
-import { Countdown } from "@/components/wedding/Countdown";
+import { CountdownSection } from "@/components/wedding/CountdownSection";
+import { FamilySection } from "@/components/wedding/FamilySection";
+import { MemoriesSection } from "@/components/wedding/MemoriesSection";
+import { BlessingsSection } from "@/components/wedding/BlessingsSection";
+import { RsvpSection } from "@/components/wedding/RsvpSection";
 import memory1 from "@/assets/memory-1.jpg";
 import memory2 from "@/assets/memory-2.jpg";
 import memory3 from "@/assets/memory-3.jpg";
@@ -104,6 +108,14 @@ function SearchExpandIcon({ className = "w-3 h-3" }: { className?: string }) {
   );
 }
 
+function DressCodeIcon({ className = "w-3 h-3" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10a2 2 0 002 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z" />
+    </svg>
+  );
+}
+
 const events = [
   {
     name: "Haldi Ceremony",
@@ -113,6 +125,7 @@ const events = [
     location: "JAIPUR, RAJASTHAN",
     mapQuery: "Garden+Terrace+Jaipur",
     IconComponent: HaldiIcon,
+    dressCode: "Shades of Yellow & Sunshine Gold",
   },
   {
     name: "Mehndi Ceremony",
@@ -122,6 +135,7 @@ const events = [
     location: "JAIPUR, RAJASTHAN",
     mapQuery: "Courtyard+Lawn+Jaipur",
     IconComponent: MehndiIcon,
+    dressCode: "Green Shades & Floral Ethnic",
   },
   {
     name: "Sangeet Night",
@@ -131,6 +145,7 @@ const events = [
     location: "JAIPUR, RAJASTHAN",
     mapQuery: "Grand+Ballroom+Jaipur",
     IconComponent: SangeetIcon,
+    dressCode: "Glitz, Glamour & Indo-Western",
   },
   {
     name: "Wedding Ceremony",
@@ -140,6 +155,7 @@ const events = [
     location: "JAIPUR, RAJASTHAN",
     mapQuery: "Amber+Mandap+Jaipur",
     IconComponent: WeddingIcon,
+    dressCode: "Royal Traditional Ethnic Wear",
   },
 ];
 
@@ -211,9 +227,8 @@ function Opening() {
 
   return (
     <div
-      className={`absolute top-0 left-0 right-0 h-[100dvh] md:h-[844px] w-full z-40 flex items-center justify-center overflow-hidden bg-black transition-opacity duration-700 ease-out ${
-        isFading ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
+      className={`absolute top-0 left-0 right-0 h-[100dvh] md:h-[844px] w-full z-40 flex items-center justify-center overflow-hidden bg-black transition-opacity duration-700 ease-out ${isFading ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
       onWheel={(e) => !hasEnded && e.preventDefault()}
     >
       {/* Background Video */}
@@ -253,11 +268,10 @@ function Opening() {
 
       {/* Printed typography overlay over final frozen frame */}
       <div
-        className={`absolute inset-0 z-10 flex flex-col items-center justify-between pt-16 md:pt-20 pb-12 md:pb-16 px-6 text-center transition-opacity duration-500 ease-out bg-transparent ${
-          hasEnded
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
+        className={`absolute inset-0 z-10 flex flex-col items-center justify-between pt-16 md:pt-20 pb-12 md:pb-16 px-6 text-center transition-opacity duration-500 ease-out bg-transparent ${hasEnded
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+          }`}
       >
         {/* Top Text Group */}
         <div className="flex flex-col items-center mt-2 md:mt-4">
@@ -456,7 +470,7 @@ function Index() {
         <img
           src={eventBgImg}
           alt="Events page lotus watercolor background"
-          className="absolute inset-0 h-full w-full object-cover object-center pointer-events-none select-none"
+          className="absolute inset-0 h-full w-full object-cover object-center pointer-events-none select-none opacity-50"
         />
 
         {/* Section Header */}
@@ -598,12 +612,22 @@ function Index() {
                   {selectedEvent.location}
                 </p>
 
+                {/* Dress Code Box */}
+                <div className="mt-2 flex flex-col items-center rounded-lg border border-[#B8966B]/30 bg-[#FAF6F2]/70 px-2.5 py-1">
+                  <span className="font-display text-[8px] md:text-[9px] uppercase tracking-[0.16em] font-bold text-[#8C263E] flex items-center gap-1">
+                    <DressCodeIcon className="w-2.5 h-2.5 text-[#8C263E]" /> Dress Code
+                  </span>
+                  <p className="font-display text-[9.5px] md:text-[10.5px] font-bold text-[#4A2E35] mt-0.5 max-w-[210px] leading-tight">
+                    {selectedEvent.dressCode}
+                  </p>
+                </div>
+
                 {/* View Location Button */}
                 <a
                   href={`https://maps.google.com/?q=${encodeURIComponent((selectedEvent.mapQuery || selectedEvent.place) + " Jaipur")}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 px-3.5 py-1 rounded-full border border-[#8C263E]/40 bg-[#8C263E]/08 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-[#8C263E] shadow-xs hover:bg-[#8C263E] hover:text-white transition-colors"
+                  className="mt-2.5 inline-flex items-center gap-1 px-3.5 py-1 rounded-full border border-[#8C263E]/40 bg-[#8C263E]/08 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-[#8C263E] shadow-xs hover:bg-[#8C263E] hover:text-white transition-colors"
                 >
                   View Location
                 </a>
@@ -614,94 +638,19 @@ function Index() {
       </section>
 
       {/* 5 — Family */}
-      <Section id="family" eyebrow="With Blessings Of" title="Our Families" tone="muted">
-        <div className="grid gap-12">
-          <div>
-            <p className="eyebrow">Groom&apos;s Family</p>
-            <p className="mt-4 font-display text-xl">Mr. Rajesh Sharma</p>
-            <p className="font-display text-xl">Mrs. Anita Sharma</p>
-            <p className="mt-2 text-sm text-muted-foreground">Brother · Kabir Sharma</p>
-          </div>
-          <div>
-            <p className="eyebrow">Bride&apos;s Family</p>
-            <p className="mt-4 font-display text-xl">Mr. Harshit Jangir</p>
-            <p className="font-display text-xl">Mrs. Sunita Jangir</p>
-            <p className="mt-2 text-sm text-muted-foreground">Sister · Naina Jangir</p>
-          </div>
-        </div>
-      </Section>
+      <FamilySection id="family" />
 
-      {/* 6 — Countdown */}
-      <Section id="countdown" eyebrow="Counting Down" title="Until we say yes">
-        <Countdown />
-      </Section>
+      {/* 6 — Countdown & Venue Celebration */}
+      <CountdownSection id="countdown" />
 
       {/* 7 — Memories */}
-      <Section id="memories" eyebrow="Our Story" title="Memories" tone="muted">
-        <div className="grid gap-4">
-          {memories.map((m) => (
-            <img
-              key={m.alt}
-              src={m.src}
-              alt={m.alt}
-              width={900}
-              height={1200}
-              loading="lazy"
-              className="h-72 w-full object-cover"
-            />
-          ))}
-        </div>
-      </Section>
+      <MemoriesSection id="memories" />
 
       {/* 8 — Blessings */}
-      <Section id="blessings" eyebrow="Shubh Aashirwad" title="Blessings">
-        <p className="font-display text-2xl italic leading-relaxed">
-          &ldquo;May your days be long, your love be gentle, and your home be full of
-          light and laughter.&rdquo;
-        </p>
-        <p className="eyebrow mt-8">With love, from all of us</p>
-      </Section>
+      <BlessingsSection id="blessings" />
 
       {/* 9 — RSVP */}
-      <Section id="rsvp" eyebrow="Kindly Reply" title="RSVP" tone="muted">
-        {sent ? (
-          <p className="font-display text-2xl">
-            Thank you — we can&apos;t wait to celebrate with you.
-          </p>
-        ) : (
-          <form onSubmit={onSubmit} className="mx-auto max-w-md space-y-4 text-left">
-            <input
-              required
-              placeholder="Your name"
-              className="w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-gold"
-            />
-            <input
-              required
-              type="email"
-              placeholder="Email"
-              className="w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-gold"
-            />
-            <select
-              className="w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-gold"
-              defaultValue="yes"
-            >
-              <option value="yes">Joyfully accepts</option>
-              <option value="no">Regretfully declines</option>
-            </select>
-            <textarea
-              rows={3}
-              placeholder="A note for us (optional)"
-              className="w-full border border-border bg-background px-4 py-3 text-sm outline-none focus:border-gold"
-            />
-            <button
-              type="submit"
-              className="w-full bg-primary px-6 py-3 text-sm tracking-[0.25em] uppercase text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Send RSVP
-            </button>
-          </form>
-        )}
-      </Section>
+      <RsvpSection id="rsvp" />
 
       {/* 10 — Venue */}
       <Section id="venue" eyebrow="Where" title="The Venue">
