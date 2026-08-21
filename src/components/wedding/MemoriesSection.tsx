@@ -60,7 +60,7 @@ export function MemoriesSection({ id = "memories", items = defaultMemories }: Me
       />
 
       {/* Main Content Container */}
-      <div className="relative z-10 mx-auto flex h-full w-full max-w-[340px] flex-col items-center justify-between py-4">
+      <div className="relative z-10 mx-auto flex flex-1 h-full w-full max-w-[340px] flex-col items-center justify-between py-3 md:py-4">
         {/* ========================================================================= */}
         {/* 1. TOP HEADER & HEADING */}
         {/* ========================================================================= */}

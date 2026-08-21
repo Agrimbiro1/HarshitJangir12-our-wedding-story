@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import blessingDoveImg from "@/assets/blessing.png";
 
 export interface BlessingItem {
   id: string;
@@ -178,7 +179,7 @@ export function BlessingsSection({ id = "blessings", guestName = "Rajesh Sharma"
       </div>
 
       {/* Main Content Composition */}
-      <div className="relative z-10 mx-auto flex h-full w-full max-w-[340px] flex-col items-center justify-between py-2">
+      <div className="relative z-10 mx-auto flex flex-1 h-full w-full max-w-[340px] flex-col items-center justify-between py-3 md:py-2">
         {/* ========================================================================= */}
         {/* 1. HEADER & TYPOGRAPHY (Matching Family Section) */}
         {/* ========================================================================= */}
@@ -198,8 +199,17 @@ export function BlessingsSection({ id = "blessings", guestName = "Rajesh Sharma"
             With Love &amp; Blessings
           </h2>
 
+          {/* Watercolor Flying White Dove/Bird PNG Asset */}
+          <div className="mt-1 md:mt-1.5 mb-0.5 flex justify-center pointer-events-none select-none animate-in fade-in slide-in-from-bottom-2 duration-1000">
+            <img
+              src={blessingDoveImg}
+              alt="Watercolor flying white dove illustration"
+              className="w-[85px] sm:w-[95px] md:w-[105px] h-auto object-contain drop-shadow-[0_2px_6px_rgba(140,38,62,0.12)] transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+
           {/* Gold Ornament Divider */}
-          <div className="mx-auto my-1.5 flex items-center justify-center gap-2 text-xs text-[#B8966B]">
+          <div className="mx-auto my-1 md:my-1.5 flex items-center justify-center gap-2 text-xs text-[#B8966B]">
             <span className="h-px w-10 bg-[#B8966B]/60" />
             <span>✦</span>
             <span className="h-px w-10 bg-[#B8966B]/60" />

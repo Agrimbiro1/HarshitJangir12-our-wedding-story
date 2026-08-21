@@ -6,6 +6,8 @@ import { FamilySection } from "@/components/wedding/FamilySection";
 import { MemoriesSection } from "@/components/wedding/MemoriesSection";
 import { BlessingsSection } from "@/components/wedding/BlessingsSection";
 import { RsvpSection } from "@/components/wedding/RsvpSection";
+import { VenueSection } from "@/components/wedding/VenueSection";
+import { ClosingSection } from "@/components/wedding/ClosingSection";
 import memory1 from "@/assets/memory-1.jpg";
 import memory2 from "@/assets/memory-2.jpg";
 import memory3 from "@/assets/memory-3.jpg";
@@ -14,7 +16,8 @@ import openingVideo from "@/assets/opening animation.mp4";
 import welcomePageImg from "@/assets/welcome page.jpg";
 import couplePageImg from "@/assets/couple page.jpg";
 import eventPageImg from "@/assets/event.png";
-import eventBgImg from "@/assets/event background.jpg";
+import eventDesignImg from "@/assets/event design.png";
+import eventDecoreImg from "@/assets/event decore.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -163,6 +166,23 @@ const memories = [
   { src: memory1, alt: "The couple at golden hour" },
   { src: memory2, alt: "Marigold garlands on silk" },
   { src: memory3, alt: "The decorated mandap at dusk" },
+];
+
+const eventSparkles = [
+  { top: "5%", left: "7%", size: 6, color: "#B8966B", duration: 3.1, delay: 0.2 },
+  { top: "7%", right: "8%", size: 8, color: "#F5E6C8", duration: 2.8, delay: 1.2 },
+  { top: "15%", left: "5%", size: 5, color: "#C88D94", duration: 3.6, delay: 0.6 },
+  { top: "18%", right: "6%", size: 9, color: "#8C263E", duration: 3.3, delay: 2.0 },
+  { top: "28%", left: "6%", size: 7, color: "#B8966B", duration: 2.9, delay: 1.5 },
+  { top: "32%", right: "5%", size: 5, color: "#FFF8F0", duration: 3.4, delay: 0.4 },
+  { top: "45%", left: "4%", size: 8, color: "#F5E6C8", duration: 3.0, delay: 1.8 },
+  { top: "48%", right: "4%", size: 6, color: "#B8966B", duration: 3.5, delay: 2.4 },
+  { top: "60%", left: "6%", size: 7, color: "#C88D94", duration: 2.7, delay: 0.8 },
+  { top: "65%", right: "6%", size: 9, color: "#B8966B", duration: 3.2, delay: 1.6 },
+  { top: "78%", left: "5%", size: 6, color: "#8C263E", duration: 3.8, delay: 0.5 },
+  { top: "82%", right: "7%", size: 8, color: "#F5E6C8", duration: 2.9, delay: 2.1 },
+  { top: "90%", left: "8%", size: 5, color: "#B8966B", duration: 3.3, delay: 1.1 },
+  { top: "93%", right: "9%", size: 7, color: "#C88D94", duration: 3.7, delay: 1.7 },
 ];
 
 function Opening() {
@@ -384,13 +404,7 @@ function Index() {
               {guestName}
             </h2>
 
-            <span className="text-[8px] text-[#823B44]/75 my-0.5">♥</span>
-
-            <p className="font-display text-[11px] tracking-wider text-[#7C5C42]">
-              &amp; Family
-            </p>
-
-            <div className="flex items-center gap-1.5 text-[#B8966B]/50 text-[9px] mt-0.5">
+            <div className="flex items-center gap-1.5 text-[#B8966B]/50 text-[9px] mt-1">
               <span>━━</span>
               <span className="text-[7px]">❖</span>
               <span>━━</span>
@@ -465,27 +479,79 @@ function Index() {
       </section>
 
       {/* 4 — Events */}
-      <section id="events" className="relative flex min-h-[100svh] md:h-[844px] w-full flex-col items-center justify-center overflow-hidden bg-[#FAF6F2]">
-        {/* Main Background Image (soft textured paper with pink lotus flowers) */}
-        <img
-          src={eventBgImg}
-          alt="Events page lotus watercolor background"
-          className="absolute inset-0 h-full w-full object-cover object-center pointer-events-none select-none opacity-50"
-        />
+      <section id="events" className="relative flex min-h-[100svh] md:h-[844px] w-full flex-col items-center justify-between pt-7 md:pt-10 pb-8 px-4 overflow-hidden bg-[#FAF6F2]">
+        {/* Soft Radial Paper Texture & Warm Ivory Gradient Background */}
+        <div className="absolute inset-0 bg-radial from-[#FFFFFF]/70 via-[#FAF6F2] to-[#F3EFE6]/80 pointer-events-none" />
 
-        {/* Section Header */}
-        <div className="relative z-10 pt-2 pb-1 text-center -translate-y-2 md:-translate-y-3">
+        {/* Sparkle Background Layer for Events Section */}
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden>
+          <style>{`
+            @keyframes eventSparkleTwinkle {
+              0%, 100% { opacity: 0; transform: scale(0.35) rotate(0deg); }
+              50% { opacity: 0.95; transform: scale(1.2) rotate(22deg); }
+            }
+          `}</style>
+          {eventSparkles.map((sp, idx) => (
+            <div
+              key={idx}
+              className="absolute flex items-center justify-center pointer-events-none"
+              style={{
+                top: sp.top,
+                left: sp.left,
+                right: sp.right,
+                width: `${sp.size}px`,
+                height: `${sp.size}px`,
+                color: sp.color,
+                animation: `eventSparkleTwinkle ${sp.duration}s ease-in-out ${sp.delay}s infinite`,
+                filter: `drop-shadow(0 0 3px ${sp.color})`,
+              }}
+            >
+              <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" />
+              </svg>
+            </div>
+          ))}
+        </div>
+
+        {/* Left Antique Lamp Decor (flipped so wall bracket attaches flush to left edge wall) */}
+        <div className="absolute top-[36px] sm:top-[44px] md:top-[50px] left-0 z-10 pointer-events-none select-none animate-in fade-in duration-700">
+          <img
+            src={eventDecoreImg}
+            alt="Vintage lamp hanging left attached to frame"
+            className="w-[66px] sm:w-[74px] md:w-[80px] h-auto object-contain drop-shadow-[0_2px_5px_rgba(0,0,0,0.08)] scale-x-[-1]"
+          />
+        </div>
+
+        {/* Right Antique Lamp Decor (unflipped so wall bracket attaches flush to right edge wall) */}
+        <div className="absolute top-[36px] sm:top-[44px] md:top-[50px] right-0 z-10 pointer-events-none select-none animate-in fade-in duration-700">
+          <img
+            src={eventDecoreImg}
+            alt="Vintage lamp hanging right attached to frame"
+            className="w-[66px] sm:w-[74px] md:w-[80px] h-auto object-contain drop-shadow-[0_2px_5px_rgba(0,0,0,0.08)]"
+          />
+        </div>
+
+        {/* Section Header & Center Bow */}
+        <div className="relative z-10 text-center pt-2 md:pt-3 flex flex-col items-center">
           <p className="font-display text-[0.6rem] md:text-[0.65rem] tracking-[0.3em] uppercase text-[#8C5B67] font-normal">
             Celebrations
           </p>
           <h2 className="script mt-0.5 text-2xl md:text-3xl text-[#4A2E35]">
             Wedding Events
           </h2>
-          <div className="mx-auto mt-1 h-px w-10 bg-[#B8966B]/50" />
+
+          {/* Center Bow Ribbon Ornament */}
+          <div className="mt-7 sm:mt-2 md:mt-2 flex justify-center pointer-events-none select-none animate-in fade-in slide-in-from-top-2 duration-700">
+            <img
+              src={eventDesignImg}
+              alt="Vintage rope and bow ribbon ornament"
+              className="w-[98px] sm:w-[105px] md:w-[110px] h-auto object-contain drop-shadow-[0_1.5px_3px_rgba(0,0,0,0.07)]"
+            />
+          </div>
         </div>
 
         {/* 2x2 Grid of 4 Parchment Event Cards */}
-        <div className="relative z-10 mx-auto grid grid-cols-2 gap-2.5 md:gap-3.5 w-full max-w-[350px] px-3 text-center -translate-y-1.5 md:-translate-y-2">
+        <div className="relative z-10 mx-auto my-auto grid grid-cols-2 gap-2.5 md:gap-3.5 w-full max-w-[340px] px-2 text-center">
           {events.map((ev) => {
             const Icon = ev.IconComponent;
             return (
@@ -650,30 +716,13 @@ function Index() {
       <BlessingsSection id="blessings" />
 
       {/* 9 — RSVP */}
-      <RsvpSection id="rsvp" />
+      <RsvpSection id="rsvp" initialGuestName={guestName} />
 
-      {/* 10 — Venue */}
-      <Section id="venue" eyebrow="Where" title="The Venue">
-        <p className="font-display text-2xl">Rambagh Gardens</p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Bhawani Singh Road, Jaipur, Rajasthan 302005
-        </p>
-        <a
-          href="https://maps.google.com/?q=Rambagh+Palace+Jaipur"
-          target="_blank"
-          rel="noreferrer"
-          className="mt-8 inline-block border border-ink px-6 py-3 text-xs tracking-[0.25em] uppercase transition-colors hover:bg-primary hover:text-primary-foreground"
-        >
-          Open in maps
-        </a>
-      </Section>
+      {/* 10 — Venue & Contact */}
+      <VenueSection id="venue" />
 
-      {/* 11 — Closing */}
-      <footer className="border-t border-border px-6 py-24 text-center">
-        <p className="script text-5xl text-primary">See you there</p>
-        <div className="mx-auto my-6 h-px w-16 bg-gold" />
-        <p className="eyebrow">Aarav &amp; Meera · 4 December 2026 · Jaipur</p>
-      </footer>
+      {/* 11 — Grand Closing */}
+      <ClosingSection id="closing" guestName={guestName} />
     </main>
   );
 }

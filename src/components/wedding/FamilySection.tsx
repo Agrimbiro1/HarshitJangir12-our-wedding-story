@@ -96,7 +96,7 @@ function PanelContent({
   isGroom: boolean;
 }) {
   return (
-    <div className="relative z-10 mx-auto flex h-full w-full max-w-[340px] flex-col items-center justify-between pt-12 md:pt-14 pb-3 px-2 text-center">
+    <div className="relative z-10 mx-auto flex flex-1 h-full w-full max-w-[340px] flex-col items-center justify-between pt-10 md:pt-14 pb-5 md:pb-3 px-2 text-center">
       {/* Sparkle Background Layer for Family Panel */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden>
         <style>{`

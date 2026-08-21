@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import countdownFrameImg from "@/assets/countdown.png";
 
 const TARGET = new Date("2026-12-04T19:00:00+05:30").getTime();
 
@@ -185,7 +186,7 @@ export function CountdownSection({ id = "countdown" }: CountdownSectionProps) {
       </div>
 
       {/* Main Content Composition */}
-      <div className="relative z-10 mx-auto flex h-full w-full max-w-[340px] flex-col items-center justify-between py-2">
+      <div className="relative z-10 mx-auto flex flex-1 h-full w-full max-w-[340px] flex-col items-center justify-between py-3 md:py-2">
         {/* ========================================================================= */}
         {/* 1. TOP HEADER & HEADING */}
         {/* ========================================================================= */}
@@ -216,7 +217,7 @@ export function CountdownSection({ id = "countdown" }: CountdownSectionProps) {
         {/* ========================================================================= */}
         {/* 2. COUNTDOWN PLAQUE PANELS (The Main Centerpiece) */}
         {/* ========================================================================= */}
-        <div className="my-2.5 w-full">
+        <div className="my-auto py-2 w-full">
           {time.isArrived ? (
             <div className="rounded-xl border border-[#E6DCCF] bg-[#FAF6F0]/95 py-4 px-3 shadow-xs">
               <p className="font-display text-lg md:text-xl font-bold tracking-[0.15em] uppercase text-[#8C263E]">
@@ -224,22 +225,29 @@ export function CountdownSection({ id = "countdown" }: CountdownSectionProps) {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-4 gap-2 w-full max-w-[315px] mx-auto">
-              {units.map((unit) => (
-                <div key={unit.label} className="flex flex-col items-center">
-                  {/* Engraved Invitation Plaque Box */}
-                  <div className="relative w-full flex flex-col items-center justify-center rounded-xl border border-[#E6DCCF] bg-[#FAF6F0] py-2.5 px-1 shadow-xs transition-all duration-300 ring-1 ring-[#FAF6F0]">
-                    {/* Top & Bottom Antique-Gold Dot Detail */}
-                    <span className="absolute top-1 text-[6px] text-[#B8966B] select-none">·</span>
-                    <span className="font-display text-3xl sm:text-[34px] font-normal text-[#5C1D2A] tabular-nums leading-none block my-1">
+            <div className="grid grid-cols-4 gap-1 sm:gap-2 w-full max-w-[345px] mx-auto px-0.5">
+              {units.map((unit, idx) => (
+                <div
+                  key={unit.label}
+                  className="relative flex flex-col items-center justify-center w-full h-[76px] sm:h-[88px] md:h-[96px] animate-in fade-in slide-in-from-bottom-2 duration-700"
+                  style={{ animationDelay: `${idx * 120}ms` }}
+                >
+                  {/* Separate Vintage Wooden Plaque PNG Frame Asset */}
+                  <img
+                    src={countdownFrameImg}
+                    alt={`Vintage wooden frame for ${unit.label}`}
+                    className="absolute inset-0 h-full w-full object-contain pointer-events-none select-none drop-shadow-[0_2.5px_5px_rgba(0,0,0,0.2)]"
+                  />
+
+                  {/* Dynamic Value & Label Centered Safely Inside Inner Wooden Area */}
+                  <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-[78%] px-1 pt-0.5 pb-1">
+                    <span className="font-display text-xl sm:text-2xl md:text-[26px] font-bold text-[#FAF6F0] tabular-nums leading-none block drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.8)]">
                       {unit.value}
                     </span>
-                    <span className="absolute bottom-1 text-[6px] text-[#B8966B] select-none">·</span>
+                    <span className="font-display text-[6px] sm:text-[7.5px] md:text-[8px] tracking-[0.1em] uppercase text-[#F5E6C8] font-bold mt-1 leading-none block drop-shadow-[0_1px_1.5px_rgba(0,0,0,0.7)] whitespace-nowrap">
+                      {unit.label}
+                    </span>
                   </div>
-                  {/* Unit Label */}
-                  <span className="font-display text-[8px] md:text-[8.5px] tracking-[0.2em] uppercase text-[#8C263E] font-bold mt-1.5">
-                    {unit.label}
-                  </span>
                 </div>
               ))}
             </div>
@@ -254,7 +262,7 @@ export function CountdownSection({ id = "countdown" }: CountdownSectionProps) {
         {/* ========================================================================= */}
         {/* 3. DECORATIVE SEPARATOR */}
         {/* ========================================================================= */}
-        <div className="my-1.5 flex items-center justify-center gap-2 text-xs text-[#B8966B] w-full">
+        <div className="my-1 flex items-center justify-center gap-2 text-xs text-[#B8966B] w-full">
           <span className="h-px w-12 bg-[#B8966B]/50" />
           <svg className="w-3.5 h-3.5 text-[#B8966B]" viewBox="0 0 24 24" fill="currentColor">
             <polygon points="12,2 15,12 12,22 9,12" />
@@ -265,7 +273,7 @@ export function CountdownSection({ id = "countdown" }: CountdownSectionProps) {
         {/* ========================================================================= */}
         {/* 4. CONNECTED VENUE / CELEBRATION SECTION */}
         {/* ========================================================================= */}
-        <div className="mt-10 md:mt-12 mb-1 flex flex-col items-center w-full">
+        <div className="my-auto md:mt-12 md:mb-1 py-1 flex flex-col items-center w-full">
           {/* Small Heading */}
           <span className="font-display text-[8.5px] md:text-[9.5px] tracking-[0.26em] uppercase text-[#8C263E] font-bold mb-1.5">
             THE CELEBRATION WILL TAKE PLACE AT
