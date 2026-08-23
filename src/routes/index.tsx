@@ -8,6 +8,7 @@ import { BlessingsSection } from "@/components/wedding/BlessingsSection";
 import { RsvpSection } from "@/components/wedding/RsvpSection";
 import { VenueSection } from "@/components/wedding/VenueSection";
 import { ClosingSection } from "@/components/wedding/ClosingSection";
+import { FallingPetals } from "@/components/wedding/FallingPetals";
 import memory1 from "@/assets/memory-1.jpg";
 import memory2 from "@/assets/memory-2.jpg";
 import memory3 from "@/assets/memory-3.jpg";
@@ -325,7 +326,7 @@ function Opening() {
 }
 
 function useGuestName(): string {
-  const [guestName, setGuestName] = useState("Guest");
+  const [guestName, setGuestName] = useState("Rajesh Kumar Ji");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -411,6 +412,39 @@ function Index() {
             </div>
           </div>
         </div>
+
+        {/* Soft Seamless Transition Blend at Bottom of Welcome Section */}
+        <div className="absolute bottom-0 left-0 right-0 h-[80px] sm:h-[105px] md:h-[125px] bg-gradient-to-b from-transparent via-[#FAF2F4]/55 to-[#FAF2F4] pointer-events-none z-10" />
+
+        {/* Transition Petals between Welcome and Couple */}
+        <div className="absolute bottom-0 left-0 right-0 h-[140px] pointer-events-none z-20 overflow-hidden" aria-hidden="true">
+          <style>{`
+            @keyframes welcomeTransitionPetal1 {
+              0% { transform: translate3d(0, -35px, 0) rotate(0deg); opacity: 0; }
+              20% { opacity: 0.8; }
+              80% { opacity: 0.7; }
+              100% { transform: translate3d(16px, 125px, 0) rotate(190deg); opacity: 0; }
+            }
+            @keyframes welcomeTransitionPetal2 {
+              0% { transform: translate3d(0, -25px, 0) rotate(25deg); opacity: 0; }
+              25% { opacity: 0.85; }
+              75% { opacity: 0.75; }
+              100% { transform: translate3d(-18px, 135px, 0) rotate(-140deg); opacity: 0; }
+            }
+          `}</style>
+          <div className="absolute left-[12%] top-2 w-3.5 h-3.5 text-[#F6C1CB] opacity-75" style={{ animation: "welcomeTransitionPetal1 7.2s linear 0.5s infinite" }}>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.5 4 4.5 8.5 4.5 13.5C4.5 17.5 7.5 21.5 12 22C16.5 21.5 19.5 17.5 19.5 13.5C19.5 8.5 15.5 4 12 2Z"/></svg>
+          </div>
+          <div className="absolute left-[38%] top-0 w-3 h-3 text-[#E6C594] opacity-70" style={{ animation: "welcomeTransitionPetal2 8.5s linear 2.2s infinite" }}>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C10 2.5 7 2 4.5 4.5C2 7 2.5 10.5 5 13.5C8 17 11 20 12 21.5C13 20 16 17 19 13.5C21.5 10.5 22 7 19.5 4.5C17 2 14 2.5 12 4.5Z"/></svg>
+          </div>
+          <div className="absolute left-[64%] top-4 w-3.5 h-3.5 text-[#C88D94] opacity-80" style={{ animation: "welcomeTransitionPetal1 6.8s linear 1.1s infinite" }}>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5C7.5 3.5 4.5 8 5 13C5.5 17.5 9 20.5 13 21C17.5 20.5 20 16.5 19.5 12C19 7.5 16 3.5 12 2.5Z"/></svg>
+          </div>
+          <div className="absolute left-[85%] top-1 w-3 h-3 text-[#FCD5CE] opacity-75" style={{ animation: "welcomeTransitionPetal2 9.2s linear 3.5s infinite" }}>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.5 4 4.5 8.5 4.5 13.5C4.5 17.5 7.5 21.5 12 22C16.5 21.5 19.5 17.5 19.5 13.5C19.5 8.5 15.5 4 12 2Z"/></svg>
+          </div>
+        </div>
       </section>
 
       {/* 3 — Couple */}
@@ -419,8 +453,14 @@ function Index() {
         <img
           src={couplePageImg}
           alt="Save the Date watercolor mandap illustration"
-          className="absolute inset-0 h-full w-full object-cover object-center pointer-events-none select-none"
+          className="absolute inset-0 h-full w-full object-cover object-center pointer-events-none select-none opacity-80"
         />
+
+        {/* Soft Top Blend Overlay for Seamless Transition from Welcome Section */}
+        <div className="absolute top-0 left-0 right-0 h-[60px] sm:h-[75px] md:h-[90px] bg-gradient-to-t from-transparent via-[#FAF6F0]/40 to-[#FAF6F0]/80 pointer-events-none z-10" />
+
+        {/* Soft Seamless Transition Gradient Overlay at Bottom of Couple Section */}
+        <div className="absolute bottom-0 left-0 right-0 h-[80px] sm:h-[95px] md:h-[110px] bg-gradient-to-b from-transparent via-[#FAF6F2]/60 to-[#FAF6F2] pointer-events-none z-10" />
 
         {/* Content safely typeset in upper empty area */}
         <div className="relative z-10 mx-auto flex max-w-[310px] flex-col items-center px-4 text-center -translate-y-[8.8rem] md:-translate-y-[9.5rem]">
@@ -482,6 +522,9 @@ function Index() {
       <section id="events" className="relative flex min-h-[100svh] md:h-[844px] w-full flex-col items-center justify-between pt-7 md:pt-10 pb-8 px-4 overflow-hidden bg-[#FAF6F2]">
         {/* Soft Radial Paper Texture & Warm Ivory Gradient Background */}
         <div className="absolute inset-0 bg-radial from-[#FFFFFF]/70 via-[#FAF6F2] to-[#F3EFE6]/80 pointer-events-none" />
+
+        {/* Falling Petal Animation Layer */}
+        <FallingPetals />
 
         {/* Sparkle Background Layer for Events Section */}
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden>
@@ -701,6 +744,9 @@ function Index() {
             </div>
           </div>
         )}
+
+        {/* Soft Bottom Transition Overlay (Events -> Family) */}
+        <div className="absolute bottom-0 left-0 right-0 h-[70px] sm:h-[85px] md:h-[100px] bg-gradient-to-b from-transparent via-[#FAF6F0]/50 to-[#FAF6F0] pointer-events-none z-20" />
       </section>
 
       {/* 5 — Family */}

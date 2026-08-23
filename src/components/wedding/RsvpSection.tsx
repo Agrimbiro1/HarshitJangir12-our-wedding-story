@@ -474,6 +474,12 @@ export function RsvpSection({
           </div>
         )}
       </div>
+
+      {/* Soft Top Transition Overlay (Blessings -> RSVP) */}
+      <div className="absolute top-0 left-0 right-0 h-[60px] sm:h-[75px] md:h-[90px] bg-gradient-to-t from-transparent via-[#FAF6F2]/50 to-[#FAF6F2] pointer-events-none z-20" />
+
+      {/* Soft Bottom Transition Overlay (RSVP -> Venue) */}
+      <div className="absolute bottom-0 left-0 right-0 h-[70px] sm:h-[85px] md:h-[100px] bg-gradient-to-b from-transparent via-[#FAF6F2]/50 to-[#FAF6F2] pointer-events-none z-20" />
     </section>
   );
 }

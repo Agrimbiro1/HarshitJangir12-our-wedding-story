@@ -119,22 +119,46 @@ const IntertwinedRingsMotifSVG: FC<{ className?: string }> = ({ className = "w-2
 
 /**
  * Curved Guest Name overlay following the vintage ribbon's natural upward arch
+ * Automatically and intelligently scales font size & letter spacing based on name length.
  */
 const CurvedRibbonGuestName: FC<{ name: string }> = ({ name }) => {
-  const text = (name && name.trim() ? name : "Guest").toUpperCase();
+  const rawText = name && name.trim() ? name.trim() : "Guest";
+  const text = rawText.toUpperCase();
+  const len = text.length;
 
-  // Dynamic font sizing based on string length to guarantee zero overflow
+  // Dynamic font sizing and letter-spacing based on exact character length
+  // to ensure name stays perfectly balanced, centered, and inside ribbon parchment
   let fontSize = 21;
   let letterSpacing = "0.08em";
-  if (text.length > 24) {
-    fontSize = 13.5;
-    letterSpacing = "0.02em";
-  } else if (text.length > 18) {
-    fontSize = 15.5;
-    letterSpacing = "0.04em";
-  } else if (text.length > 13) {
-    fontSize = 17.5;
+
+  if (len <= 5) {
+    // e.g. "GUEST", "AARAV"
+    fontSize = 22;
+    letterSpacing = "0.08em";
+  } else if (len <= 8) {
+    // e.g. "HARSHIT", "MEERA"
+    fontSize = 20;
+    letterSpacing = "0.07em";
+  } else if (len <= 12) {
+    // e.g. "AARAV SHARMA"
+    fontSize = 18;
     letterSpacing = "0.05em";
+  } else if (len <= 16) {
+    // e.g. "HARSHIT JANGID", "RAJESH SHARMA"
+    fontSize = 16;
+    letterSpacing = "0.035em";
+  } else if (len <= 21) {
+    // e.g. "HARSHIT JANGID FAMILY"
+    fontSize = 14;
+    letterSpacing = "0.02em";
+  } else if (len <= 26) {
+    // e.g. "A VERY LONG GUEST NAME"
+    fontSize = 12;
+    letterSpacing = "0.01em";
+  } else {
+    // Extremely long names (27+ chars)
+    fontSize = Math.max(9, Math.floor(300 / len));
+    letterSpacing = "0em";
   }
 
   return (
@@ -149,7 +173,7 @@ const CurvedRibbonGuestName: FC<{ name: string }> = ({ name }) => {
       </defs>
       <text
         fill="#8C263E"
-        className="font-bold tracking-widest uppercase"
+        className="font-bold tracking-widest"
         style={{
           fontFamily: "'Playfair Display', 'Cinzel', 'Cormorant Garamond', serif",
           fontSize: `${fontSize}px`,
@@ -167,7 +191,7 @@ const CurvedRibbonGuestName: FC<{ name: string }> = ({ name }) => {
 
 export function ClosingSection({
   id = "closing",
-  guestName = "",
+  guestName = "Rajesh Kumar Ji",
   coupleNames = "Aarav & Meera",
   weddingDate = "4 DECEMBER 2026",
   location = "JAIPUR",
@@ -309,6 +333,9 @@ export function ClosingSection({
           </p>
         </div>
       </div>
+
+      {/* Soft Top Transition Overlay (Venue -> Closing) */}
+      <div className="absolute top-0 left-0 right-0 h-[60px] sm:h-[75px] md:h-[90px] bg-gradient-to-t from-transparent via-[#FAF6F2]/50 to-[#FAF6F2] pointer-events-none z-20" />
     </section>
   );
 }
