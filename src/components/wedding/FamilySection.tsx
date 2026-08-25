@@ -213,9 +213,7 @@ function PanelContent({
                 {sib.name}
               </p>
               {sib.role && (
-                <p className="font-display text-[9.5px] italic text-[#6B5744]">
-                  {sib.role}
-                </p>
+                <p className="font-display text-[9.5px] italic text-[#6B5744]">{sib.role}</p>
               )}
             </div>
           ))}
@@ -258,14 +256,28 @@ function PanelContent({
       {/* 7. WATERCOLOR BOTANICAL LEAF ACCENT AT BOTTOM */}
       <div className="w-full flex justify-between items-end px-2 -mb-2 pointer-events-none select-none opacity-80">
         <svg className="w-12 h-6 text-[#6B705C]" viewBox="0 0 100 50" fill="currentColor">
-          <path d="M10 40 Q 30 10 50 40 Q 70 10 90 40" stroke="currentColor" strokeWidth="2" fill="none" />
+          <path
+            d="M10 40 Q 30 10 50 40 Q 70 10 90 40"
+            stroke="currentColor"
+            strokeWidth="2"
+            fill="none"
+          />
           <circle cx="20" cy="25" r="4" opacity="0.6" />
           <circle cx="40" cy="20" r="5" opacity="0.6" />
           <circle cx="60" cy="22" r="4.5" opacity="0.6" />
           <circle cx="80" cy="28" r="4" opacity="0.6" />
         </svg>
-        <svg className="w-12 h-6 text-[#6B705C] scale-x-[-1]" viewBox="0 0 100 50" fill="currentColor">
-          <path d="M10 40 Q 30 10 50 40 Q 70 10 90 40" stroke="currentColor" strokeWidth="2" fill="none" />
+        <svg
+          className="w-12 h-6 text-[#6B705C] scale-x-[-1]"
+          viewBox="0 0 100 50"
+          fill="currentColor"
+        >
+          <path
+            d="M10 40 Q 30 10 50 40 Q 70 10 90 40"
+            stroke="currentColor"
+            strokeWidth="2"
+            fill="none"
+          />
           <circle cx="20" cy="25" r="4" opacity="0.6" />
           <circle cx="40" cy="20" r="5" opacity="0.6" />
           <circle cx="60" cy="22" r="4.5" opacity="0.6" />

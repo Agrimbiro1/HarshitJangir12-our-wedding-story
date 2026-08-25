@@ -86,10 +86,26 @@ function VenueArchitecturalSketch({ className = "w-full max-w-[270px]" }: { clas
       <rect x="317" y="145" width="18" height="35" rx="2" strokeWidth="0.9" />
 
       {/* Flanking Cypress Trees */}
-      <path d="M 30 180 C 25 150 22 120 30 100 C 38 120 35 150 30 180 Z" fill="#FAF6F0" strokeWidth="1" />
-      <path d="M 370 180 C 365 150 362 120 370 100 C 378 120 375 150 370 180 Z" fill="#FAF6F0" strokeWidth="1" />
-      <path d="M 120 180 C 117 160 115 140 120 125 C 125 140 123 160 120 180 Z" fill="#FAF6F0" strokeWidth="0.9" />
-      <path d="M 280 180 C 277 160 275 140 280 125 C 285 140 283 160 280 180 Z" fill="#FAF6F0" strokeWidth="0.9" />
+      <path
+        d="M 30 180 C 25 150 22 120 30 100 C 38 120 35 150 30 180 Z"
+        fill="#FAF6F0"
+        strokeWidth="1"
+      />
+      <path
+        d="M 370 180 C 365 150 362 120 370 100 C 378 120 375 150 370 180 Z"
+        fill="#FAF6F0"
+        strokeWidth="1"
+      />
+      <path
+        d="M 120 180 C 117 160 115 140 120 125 C 125 140 123 160 120 180 Z"
+        fill="#FAF6F0"
+        strokeWidth="0.9"
+      />
+      <path
+        d="M 280 180 C 277 160 275 140 280 125 C 285 140 283 160 280 180 Z"
+        fill="#FAF6F0"
+        strokeWidth="0.9"
+      />
     </svg>
   );
 }
@@ -290,9 +306,7 @@ export function CountdownSection({ id = "countdown" }: CountdownSectionProps) {
           </h3>
 
           {/* Venue Location */}
-          <p className="font-display text-xs md:text-sm text-[#6B5744] mt-0.5">
-            Jaipur, Rajasthan
-          </p>
+          <p className="font-display text-xs md:text-sm text-[#6B5744] mt-0.5">Jaipur, Rajasthan</p>
 
           {/* View Location CTA Button */}
           <a

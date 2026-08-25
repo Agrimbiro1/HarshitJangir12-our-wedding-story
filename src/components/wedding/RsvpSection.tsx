@@ -96,8 +96,7 @@ function playCelebrationChime(isMuted: boolean) {
   try {
     const AudioCtx =
       window.AudioContext ||
-      (window as unknown as { webkitAudioContext: typeof AudioContext })
-        .webkitAudioContext;
+      (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
     if (!AudioCtx) return;
     const ctx = new AudioCtx();
 
@@ -238,13 +237,25 @@ export function RsvpSection({
           title={isMuted ? "Unmute Celebration Chime" : "Mute Sound"}
         >
           {isMuted ? (
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              className="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M11 5L6 9H2v6h4l5 4V5z" />
               <line x1="23" y1="9" x2="17" y2="15" />
               <line x1="17" y1="9" x2="23" y2="15" />
             </svg>
           ) : (
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              className="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
               <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
             </svg>
@@ -313,8 +324,21 @@ export function RsvpSection({
 
             {/* Center Golden Celebration Emblem */}
             <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border-2 border-[#D4AF37] bg-radial from-[#FFF9EE] via-[#FAF6F0] to-[#F5E8D0] shadow-2xl animate-bounce ring-4 ring-[#D4AF37]/30">
-              <svg className="w-10 h-10 text-[#8C263E] drop-shadow-[0_2px_4px_rgba(140,38,62,0.35)] animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M2 17L3.8 7.5L8.5 12L12 4L15.5 12L20.2 7.5L22 17H2Z" fill="url(#crownGoldGrad)" stroke="#8C263E" strokeWidth="1.2" />
+              <svg
+                className="w-10 h-10 text-[#8C263E] drop-shadow-[0_2px_4px_rgba(140,38,62,0.35)] animate-pulse"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path
+                  d="M2 17L3.8 7.5L8.5 12L12 4L15.5 12L20.2 7.5L22 17H2Z"
+                  fill="url(#crownGoldGrad)"
+                  stroke="#8C263E"
+                  strokeWidth="1.2"
+                />
                 <circle cx="12" cy="4" r="1.3" fill="#D4AF37" />
                 <circle cx="3.8" cy="7.5" r="1" fill="#8C263E" />
                 <circle cx="20.2" cy="7.5" r="1" fill="#8C263E" />
@@ -322,7 +346,14 @@ export function RsvpSection({
                 <circle cx="15.5" cy="12" r="0.8" fill="#D4AF37" />
                 <path d="M4.5 19.5H19.5" stroke="#8C263E" strokeWidth="1.5" strokeLinecap="round" />
                 <defs>
-                  <linearGradient id="crownGoldGrad" x1="2" y1="4" x2="22" y2="19" gradientUnits="userSpaceOnUse">
+                  <linearGradient
+                    id="crownGoldGrad"
+                    x1="2"
+                    y1="4"
+                    x2="22"
+                    y2="19"
+                    gradientUnits="userSpaceOnUse"
+                  >
                     <stop stopColor="#F7E7C4" />
                     <stop offset="0.5" stopColor="#E2C275" />
                     <stop offset="1" stopColor="#C89D42" />
@@ -396,10 +427,18 @@ export function RsvpSection({
               </div>
 
               {/* Corner Gold Dot & Sparkle Accents */}
-              <span className="absolute top-2.5 left-3.5 text-[8px] text-[#B8966B] select-none">✦</span>
-              <span className="absolute top-2.5 right-3.5 text-[8px] text-[#B8966B] select-none">✦</span>
-              <span className="absolute bottom-2.5 left-3.5 text-[8px] text-[#B8966B] select-none">✦</span>
-              <span className="absolute bottom-2.5 right-3.5 text-[8px] text-[#B8966B] select-none">✦</span>
+              <span className="absolute top-2.5 left-3.5 text-[8px] text-[#B8966B] select-none">
+                ✦
+              </span>
+              <span className="absolute top-2.5 right-3.5 text-[8px] text-[#B8966B] select-none">
+                ✦
+              </span>
+              <span className="absolute bottom-2.5 left-3.5 text-[8px] text-[#B8966B] select-none">
+                ✦
+              </span>
+              <span className="absolute bottom-2.5 right-3.5 text-[8px] text-[#B8966B] select-none">
+                ✦
+              </span>
 
               {/* Top Thank You Badge */}
               <span className="inline-block rounded-full border border-[#B8966B]/60 bg-[#FAF6F0] px-4 py-0.5 text-[9px] font-extrabold tracking-[0.3em] uppercase text-[#8C263E] shadow-2xs mb-2">
@@ -430,12 +469,15 @@ export function RsvpSection({
 
               {/* Message */}
               <p className="font-display italic text-xs md:text-sm text-[#6B5744] my-2 leading-relaxed max-w-[270px] mx-auto">
-                &ldquo;We are overjoyed that you will be joining us on our special day! Your presence will make our wedding truly complete.&rdquo;
+                &ldquo;We are overjoyed that you will be joining us on our special day! Your
+                presence will make our wedding truly complete.&rdquo;
               </p>
 
               {/* Attendance Summary Pill */}
               <div className="my-2.5 inline-flex items-center gap-1.5 rounded-full border border-[#B8966B]/40 bg-[#8C263E]/08 px-3 py-1 text-[8.5px] font-bold uppercase tracking-wider text-[#8C263E]">
-                <span>RSVP: Attending ({attendingCount} {attendingCount === 1 ? "Guest" : "Guests"})</span>
+                <span>
+                  RSVP: Attending ({attendingCount} {attendingCount === 1 ? "Guest" : "Guests"})
+                </span>
                 <span>✓</span>
               </div>
 
@@ -457,7 +499,11 @@ export function RsvpSection({
                   className="inline-flex items-center gap-1.5 rounded-full border border-[#D4AF37] bg-[#FAF6F0] px-3.5 py-1.5 text-[8.5px] font-bold tracking-[0.2em] uppercase text-[#8C263E] shadow-xs hover:bg-[#8C263E] hover:text-white transition-all cursor-pointer group"
                 >
                   <span>Re-blast Fireworks</span>
-                  <svg className="w-3 h-3 text-[#D4AF37] group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                  <svg
+                    className="w-3 h-3 text-[#D4AF37] group-hover:text-white transition-colors"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
                     <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" />
                   </svg>
                 </button>
@@ -483,4 +529,3 @@ export function RsvpSection({
     </section>
   );
 }
-

@@ -11,7 +11,8 @@ const initialBlessings: BlessingItem[] = [
   {
     id: "1",
     name: "Rajesh Sharma",
-    message: "May your journey together always be filled with endless love, laughter, and eternal happiness.",
+    message:
+      "May your journey together always be filled with endless love, laughter, and eternal happiness.",
   },
   {
     id: "2",
@@ -21,7 +22,8 @@ const initialBlessings: BlessingItem[] = [
   {
     id: "3",
     name: "Kabir Sharma",
-    message: "Heartiest congratulations! So excited to celebrate this wonderful new chapter with you both.",
+    message:
+      "Heartiest congratulations! So excited to celebrate this wonderful new chapter with you both.",
   },
   {
     id: "4",
@@ -86,7 +88,10 @@ const sparkles = [
   { top: "96%", right: "22%", size: 6, color: "#FFF8F0", duration: 2.9, delay: 0.4 },
 ];
 
-export function BlessingsSection({ id = "blessings", guestName = "Rajesh Sharma" }: BlessingsSectionProps) {
+export function BlessingsSection({
+  id = "blessings",
+  guestName = "Rajesh Sharma",
+}: BlessingsSectionProps) {
   const [blessings, setBlessings] = useState<BlessingItem[]>(initialBlessings);
   const [blessingText, setBlessingText] = useState("");
   const [successMsg, setSuccessMsg] = useState("");

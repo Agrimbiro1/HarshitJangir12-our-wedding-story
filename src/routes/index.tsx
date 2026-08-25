@@ -44,7 +44,15 @@ export const Route = createFileRoute("/")({
 
 function HaldiIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M4 11C4 16 7.5 19 12 19C16.5 19 20 16 20 11H4Z" />
       <path d="M3 11H21" />
       <path d="M6.5 11C7 8.5 9 7 12 7C15 7 17 8.5 17.5 11" />
@@ -56,7 +64,15 @@ function HaldiIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function MehndiIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M12 3C12 3 8 7 8 11C8 13.2 9.8 15 12 15C14.2 15 16 13.2 16 11C16 7 12 3 12 3Z" />
       <circle cx="12" cy="11" r="1.8" />
       <path d="M12 15V21" />
@@ -70,7 +86,15 @@ function MehndiIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function SangeetIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M9 18V8L18 5V15" />
       <circle cx="6.5" cy="18" r="2.5" />
       <circle cx="15.5" cy="15" r="2.5" />
@@ -81,7 +105,15 @@ function SangeetIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function WeddingIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M12 3L12 5" />
       <path d="M12 5C8 5 5 7.5 5 10H19C19 7.5 16 5 12 5Z" />
       <path d="M6 10V20" />
@@ -94,7 +126,15 @@ function WeddingIcon({ className = "w-5 h-5" }: { className?: string }) {
 
 function LocationIcon({ className = "w-3 h-3" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M12 21C16 16.5 18 13.2 18 10C18 6.7 15.3 4 12 4C8.7 4 6 6.7 6 10C6 13.2 8 16.5 12 21Z" />
       <circle cx="12" cy="10" r="2.5" />
     </svg>
@@ -103,7 +143,15 @@ function LocationIcon({ className = "w-3 h-3" }: { className?: string }) {
 
 function SearchExpandIcon({ className = "w-3 h-3" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <circle cx="11" cy="11" r="6" />
       <path d="M15.5 15.5L20 20" />
       <path d="M11 8V14" strokeWidth="1.2" />
@@ -114,7 +162,15 @@ function SearchExpandIcon({ className = "w-3 h-3" }: { className?: string }) {
 
 function DressCodeIcon({ className = "w-3 h-3" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10a2 2 0 002 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z" />
     </svg>
   );
@@ -248,8 +304,9 @@ function Opening() {
 
   return (
     <div
-      className={`absolute top-0 left-0 right-0 h-[100dvh] md:h-[844px] w-full z-40 flex items-center justify-center overflow-hidden bg-black transition-opacity duration-700 ease-out ${isFading ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
+      className={`absolute top-0 left-0 right-0 h-[100dvh] md:h-[844px] w-full z-40 flex items-center justify-center overflow-hidden bg-black transition-opacity duration-700 ease-out ${
+        isFading ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}
       onWheel={(e) => !hasEnded && e.preventDefault()}
     >
       {/* Background Video */}
@@ -289,10 +346,9 @@ function Opening() {
 
       {/* Printed typography overlay over final frozen frame */}
       <div
-        className={`absolute inset-0 z-10 flex flex-col items-center justify-between pt-16 md:pt-20 pb-12 md:pb-16 px-6 text-center transition-opacity duration-500 ease-out bg-transparent ${hasEnded
-          ? "opacity-100 pointer-events-auto"
-          : "opacity-0 pointer-events-none"
-          }`}
+        className={`absolute inset-0 z-10 flex flex-col items-center justify-between pt-16 md:pt-20 pb-12 md:pb-16 px-6 text-center transition-opacity duration-500 ease-out bg-transparent ${
+          hasEnded ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
       >
         {/* Top Text Group */}
         <div className="flex flex-col items-center mt-2 md:mt-4">
@@ -332,10 +388,7 @@ function useGuestName(): string {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       const name =
-        params.get("guest") ||
-        params.get("name") ||
-        params.get("to") ||
-        params.get("guestName");
+        params.get("guest") || params.get("name") || params.get("to") || params.get("guestName");
       if (name && name.trim()) {
         setGuestName(name.trim());
       }
@@ -385,8 +438,8 @@ function Index() {
           </p>
 
           <p className="mt-2 text-[10px] md:text-[11px] leading-relaxed text-[#5C4A38]/90 font-display italic max-w-[270px]">
-            We invite you to share in the joy of our wedding, and in the small moments
-            that will make it a lifetime.
+            We invite you to share in the joy of our wedding, and in the small moments that will
+            make it a lifetime.
           </p>
 
           {/* Guest Personalization Block */}
@@ -397,9 +450,7 @@ function Index() {
               <span>━━</span>
             </div>
 
-            <p className="font-display text-[11px] italic text-[#7C5C42] mt-0.5">
-              Dear
-            </p>
+            <p className="font-display text-[11px] italic text-[#7C5C42] mt-0.5">Dear</p>
 
             <h2 className="script text-2xl md:text-3xl text-[#823B44] mt-0.5 leading-snug">
               {guestName}
@@ -417,7 +468,10 @@ function Index() {
         <div className="absolute bottom-0 left-0 right-0 h-[80px] sm:h-[105px] md:h-[125px] bg-gradient-to-b from-transparent via-[#FAF2F4]/55 to-[#FAF2F4] pointer-events-none z-10" />
 
         {/* Transition Petals between Welcome and Couple */}
-        <div className="absolute bottom-0 left-0 right-0 h-[140px] pointer-events-none z-20 overflow-hidden" aria-hidden="true">
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[140px] pointer-events-none z-20 overflow-hidden"
+          aria-hidden="true"
+        >
           <style>{`
             @keyframes welcomeTransitionPetal1 {
               0% { transform: translate3d(0, -35px, 0) rotate(0deg); opacity: 0; }
@@ -432,23 +486,46 @@ function Index() {
               100% { transform: translate3d(-18px, 135px, 0) rotate(-140deg); opacity: 0; }
             }
           `}</style>
-          <div className="absolute left-[12%] top-2 w-3.5 h-3.5 text-[#F6C1CB] opacity-75" style={{ animation: "welcomeTransitionPetal1 7.2s linear 0.5s infinite" }}>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.5 4 4.5 8.5 4.5 13.5C4.5 17.5 7.5 21.5 12 22C16.5 21.5 19.5 17.5 19.5 13.5C19.5 8.5 15.5 4 12 2Z"/></svg>
+          <div
+            className="absolute left-[12%] top-2 w-3.5 h-3.5 text-[#F6C1CB] opacity-75"
+            style={{ animation: "welcomeTransitionPetal1 7.2s linear 0.5s infinite" }}
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.5 4 4.5 8.5 4.5 13.5C4.5 17.5 7.5 21.5 12 22C16.5 21.5 19.5 17.5 19.5 13.5C19.5 8.5 15.5 4 12 2Z" />
+            </svg>
           </div>
-          <div className="absolute left-[38%] top-0 w-3 h-3 text-[#E6C594] opacity-70" style={{ animation: "welcomeTransitionPetal2 8.5s linear 2.2s infinite" }}>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4.5C10 2.5 7 2 4.5 4.5C2 7 2.5 10.5 5 13.5C8 17 11 20 12 21.5C13 20 16 17 19 13.5C21.5 10.5 22 7 19.5 4.5C17 2 14 2.5 12 4.5Z"/></svg>
+          <div
+            className="absolute left-[38%] top-0 w-3 h-3 text-[#E6C594] opacity-70"
+            style={{ animation: "welcomeTransitionPetal2 8.5s linear 2.2s infinite" }}
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 4.5C10 2.5 7 2 4.5 4.5C2 7 2.5 10.5 5 13.5C8 17 11 20 12 21.5C13 20 16 17 19 13.5C21.5 10.5 22 7 19.5 4.5C17 2 14 2.5 12 4.5Z" />
+            </svg>
           </div>
-          <div className="absolute left-[64%] top-4 w-3.5 h-3.5 text-[#C88D94] opacity-80" style={{ animation: "welcomeTransitionPetal1 6.8s linear 1.1s infinite" }}>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5C7.5 3.5 4.5 8 5 13C5.5 17.5 9 20.5 13 21C17.5 20.5 20 16.5 19.5 12C19 7.5 16 3.5 12 2.5Z"/></svg>
+          <div
+            className="absolute left-[64%] top-4 w-3.5 h-3.5 text-[#C88D94] opacity-80"
+            style={{ animation: "welcomeTransitionPetal1 6.8s linear 1.1s infinite" }}
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.5C7.5 3.5 4.5 8 5 13C5.5 17.5 9 20.5 13 21C17.5 20.5 20 16.5 19.5 12C19 7.5 16 3.5 12 2.5Z" />
+            </svg>
           </div>
-          <div className="absolute left-[85%] top-1 w-3 h-3 text-[#FCD5CE] opacity-75" style={{ animation: "welcomeTransitionPetal2 9.2s linear 3.5s infinite" }}>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.5 4 4.5 8.5 4.5 13.5C4.5 17.5 7.5 21.5 12 22C16.5 21.5 19.5 17.5 19.5 13.5C19.5 8.5 15.5 4 12 2Z"/></svg>
+          <div
+            className="absolute left-[85%] top-1 w-3 h-3 text-[#FCD5CE] opacity-75"
+            style={{ animation: "welcomeTransitionPetal2 9.2s linear 3.5s infinite" }}
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.5 4 4.5 8.5 4.5 13.5C4.5 17.5 7.5 21.5 12 22C16.5 21.5 19.5 17.5 19.5 13.5C19.5 8.5 15.5 4 12 2Z" />
+            </svg>
           </div>
         </div>
       </section>
 
       {/* 3 — Couple */}
-      <section id="couple" className="relative flex min-h-[100svh] md:h-[844px] w-full flex-col items-center justify-center overflow-hidden bg-[#FAF2F4]">
+      <section
+        id="couple"
+        className="relative flex min-h-[100svh] md:h-[844px] w-full flex-col items-center justify-center overflow-hidden bg-[#FAF2F4]"
+      >
         {/* Background Artwork with Mandap Illustration */}
         <img
           src={couplePageImg}
@@ -519,7 +596,10 @@ function Index() {
       </section>
 
       {/* 4 — Events */}
-      <section id="events" className="relative flex min-h-[100svh] md:h-[844px] w-full flex-col items-center justify-between pt-7 md:pt-10 pb-8 px-4 overflow-hidden bg-[#FAF6F2]">
+      <section
+        id="events"
+        className="relative flex min-h-[100svh] md:h-[844px] w-full flex-col items-center justify-between pt-7 md:pt-10 pb-8 px-4 overflow-hidden bg-[#FAF6F2]"
+      >
         {/* Soft Radial Paper Texture & Warm Ivory Gradient Background */}
         <div className="absolute inset-0 bg-radial from-[#FFFFFF]/70 via-[#FAF6F2] to-[#F3EFE6]/80 pointer-events-none" />
 
@@ -579,9 +659,7 @@ function Index() {
           <p className="font-display text-[0.6rem] md:text-[0.65rem] tracking-[0.3em] uppercase text-[#8C5B67] font-normal">
             Celebrations
           </p>
-          <h2 className="script mt-0.5 text-2xl md:text-3xl text-[#4A2E35]">
-            Wedding Events
-          </h2>
+          <h2 className="script mt-0.5 text-2xl md:text-3xl text-[#4A2E35]">Wedding Events</h2>
 
           {/* Center Bow Ribbon Ornament */}
           <div className="mt-7 sm:mt-2 md:mt-2 flex justify-center pointer-events-none select-none animate-in fade-in slide-in-from-top-2 duration-700">

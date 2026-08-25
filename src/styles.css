@@ -218,27 +218,39 @@
 }
 
 @media (max-height: 920px) and (min-width: 768px) {
-  .phone-scale { transform: scale(0.95); }
+  .phone-scale {
+    transform: scale(0.95);
+  }
 }
 
 @media (max-height: 850px) and (min-width: 768px) {
-  .phone-scale { transform: scale(0.86); }
+  .phone-scale {
+    transform: scale(0.86);
+  }
 }
 
 @media (max-height: 780px) and (min-width: 768px) {
-  .phone-scale { transform: scale(0.78); }
+  .phone-scale {
+    transform: scale(0.78);
+  }
 }
 
 @media (max-height: 710px) and (min-width: 768px) {
-  .phone-scale { transform: scale(0.7); }
+  .phone-scale {
+    transform: scale(0.7);
+  }
 }
 
 @media (max-height: 640px) and (min-width: 768px) {
-  .phone-scale { transform: scale(0.62); }
+  .phone-scale {
+    transform: scale(0.62);
+  }
 }
 
 @media (max-height: 570px) and (min-width: 768px) {
-  .phone-scale { transform: scale(0.54); }
+  .phone-scale {
+    transform: scale(0.54);
+  }
 }
 
 /* Ambient backdrop behind the phone frame */
@@ -284,8 +296,12 @@
   background-image:
     radial-gradient(circle, var(--gold) 2px, transparent 2px),
     radial-gradient(circle, var(--accent) 1.5px, transparent 1.5px);
-  background-size: 220px 220px, 160px 160px;
-  background-position: 0 0, 80px 60px;
+  background-size:
+    220px 220px,
+    160px 160px;
+  background-position:
+    0 0,
+    80px 60px;
   opacity: 0.25;
   animation: petal-drift 40s linear infinite;
 }
@@ -312,10 +328,14 @@
 
 @keyframes petal-drift {
   from {
-    background-position: 0 0, 80px 60px;
+    background-position:
+      0 0,
+      80px 60px;
   }
   to {
-    background-position: 220px 440px, 300px 380px;
+    background-position:
+      220px 440px,
+      300px 380px;
   }
 }
 

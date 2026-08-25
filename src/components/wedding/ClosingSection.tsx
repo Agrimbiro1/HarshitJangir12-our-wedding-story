@@ -77,11 +77,27 @@ const IntertwinedRingsMotifSVG: FC<{ className?: string }> = ({ className = "w-2
     <g strokeWidth="2">
       {/* Left Ring (Groom) */}
       <circle cx="50" cy="62" r="21" stroke="url(#ringGoldGrad1)" fill="none" />
-      <circle cx="50" cy="62" r="18.5" stroke="#B8966B" strokeWidth="0.8" opacity="0.4" fill="none" />
+      <circle
+        cx="50"
+        cy="62"
+        r="18.5"
+        stroke="#B8966B"
+        strokeWidth="0.8"
+        opacity="0.4"
+        fill="none"
+      />
 
       {/* Right Ring (Bride) with Solitaire Diamond */}
       <circle cx="70" cy="62" r="21" stroke="url(#ringGoldGrad2)" fill="none" />
-      <circle cx="70" cy="62" r="18.5" stroke="#B8966B" strokeWidth="0.8" opacity="0.4" fill="none" />
+      <circle
+        cx="70"
+        cy="62"
+        r="18.5"
+        stroke="#B8966B"
+        strokeWidth="0.8"
+        opacity="0.4"
+        fill="none"
+      />
 
       {/* Solitaire Diamond Sparkle on Right Ring */}
       <path d="M 70 37 L 73 41 L 70 45 L 67 41 Z" fill="#8C263E" stroke="#D4AF37" strokeWidth="1" />
@@ -103,12 +119,26 @@ const IntertwinedRingsMotifSVG: FC<{ className?: string }> = ({ className = "w-2
     <path d="M 60 16 L 62 21 L 67 23 L 62 25 L 60 30 L 58 25 L 53 23 L 58 21 Z" fill="#D4AF37" />
 
     <defs>
-      <linearGradient id="ringGoldGrad1" x1="29" y1="41" x2="71" y2="83" gradientUnits="userSpaceOnUse">
+      <linearGradient
+        id="ringGoldGrad1"
+        x1="29"
+        y1="41"
+        x2="71"
+        y2="83"
+        gradientUnits="userSpaceOnUse"
+      >
         <stop stopColor="#F5E6C8" />
         <stop offset="0.5" stopColor="#D4AF37" />
         <stop offset="1" stopColor="#B8966B" />
       </linearGradient>
-      <linearGradient id="ringGoldGrad2" x1="49" y1="41" x2="91" y2="83" gradientUnits="userSpaceOnUse">
+      <linearGradient
+        id="ringGoldGrad2"
+        x1="49"
+        y1="41"
+        x2="91"
+        y2="83"
+        gradientUnits="userSpaceOnUse"
+      >
         <stop stopColor="#FFF9EE" />
         <stop offset="0.5" stopColor="#E6C280" />
         <stop offset="1" stopColor="#8C263E" />

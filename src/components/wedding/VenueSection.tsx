@@ -69,7 +69,16 @@ const VenuePalaceIllustration: FC<{ className?: string }> = ({ className = "w-fu
     aria-hidden="true"
   >
     {/* Base Ground Line & Accent Dots */}
-    <line x1="20" y1="116" x2="300" y2="116" stroke="#8C263E" strokeWidth="1.2" strokeDasharray="3 3" opacity="0.6" />
+    <line
+      x1="20"
+      y1="116"
+      x2="300"
+      y2="116"
+      stroke="#8C263E"
+      strokeWidth="1.2"
+      strokeDasharray="3 3"
+      opacity="0.6"
+    />
     <line x1="10" y1="120" x2="310" y2="120" stroke="#B8966B" strokeWidth="1.5" opacity="0.7" />
 
     {/* Side Trees Foliage Line Art */}
@@ -88,8 +97,26 @@ const VenuePalaceIllustration: FC<{ className?: string }> = ({ className = "w-fu
       {/* Roof Pediment */}
       <path d="M 40 60 L 69.5 40 L 99 60 Z" fill="#FAF6F0" />
       {/* Windows */}
-      <rect x="52" y="70" width="14" height="20" rx="7" fill="#8C263E" fillOpacity="0.08" strokeWidth="1" />
-      <rect x="73" y="70" width="14" height="20" rx="7" fill="#8C263E" fillOpacity="0.08" strokeWidth="1" />
+      <rect
+        x="52"
+        y="70"
+        width="14"
+        height="20"
+        rx="7"
+        fill="#8C263E"
+        fillOpacity="0.08"
+        strokeWidth="1"
+      />
+      <rect
+        x="73"
+        y="70"
+        width="14"
+        height="20"
+        rx="7"
+        fill="#8C263E"
+        fillOpacity="0.08"
+        strokeWidth="1"
+      />
       <rect x="52" y="98" width="14" height="18" rx="1" strokeWidth="1" />
       <rect x="73" y="98" width="14" height="18" rx="1" strokeWidth="1" />
     </g>
@@ -100,8 +127,26 @@ const VenuePalaceIllustration: FC<{ className?: string }> = ({ className = "w-fu
       {/* Roof Pediment */}
       <path d="M 221 60 L 250.5 40 L 280 60 Z" fill="#FAF6F0" />
       {/* Windows */}
-      <rect x="233" y="70" width="14" height="20" rx="7" fill="#8C263E" fillOpacity="0.08" strokeWidth="1" />
-      <rect x="254" y="70" width="14" height="20" rx="7" fill="#8C263E" fillOpacity="0.08" strokeWidth="1" />
+      <rect
+        x="233"
+        y="70"
+        width="14"
+        height="20"
+        rx="7"
+        fill="#8C263E"
+        fillOpacity="0.08"
+        strokeWidth="1"
+      />
+      <rect
+        x="254"
+        y="70"
+        width="14"
+        height="20"
+        rx="7"
+        fill="#8C263E"
+        fillOpacity="0.08"
+        strokeWidth="1"
+      />
       <rect x="233" y="98" width="14" height="18" rx="1" strokeWidth="1" />
       <rect x="254" y="98" width="14" height="18" rx="1" strokeWidth="1" />
     </g>
@@ -117,7 +162,15 @@ const VenuePalaceIllustration: FC<{ className?: string }> = ({ className = "w-fu
       <circle cx="160" cy="4" r="2.5" fill="#B8966B" stroke="none" />
 
       {/* Pediment Rosette Window */}
-      <circle cx="160" cy="32" r="6" fill="#B8966B" fillOpacity="0.15" stroke="#B8966B" strokeWidth="1" />
+      <circle
+        cx="160"
+        cy="32"
+        r="6"
+        fill="#B8966B"
+        fillOpacity="0.15"
+        stroke="#B8966B"
+        strokeWidth="1"
+      />
       <circle cx="160" cy="32" r="2" fill="#B8966B" stroke="none" />
 
       {/* Decorative Balustrade Horizon */}
@@ -132,9 +185,28 @@ const VenuePalaceIllustration: FC<{ className?: string }> = ({ className = "w-fu
       </g>
 
       {/* Grand Arch Entrance Portico */}
-      <path d="M 134 120 V 82 C 134 68 186 68 186 82 V 120 Z" fill="#FAF6F0" stroke="#8C263E" strokeWidth="1.4" />
-      <path d="M 142 120 V 87 C 142 76 178 76 178 87 V 120 Z" fill="#8C263E" fillOpacity="0.06" stroke="#B8966B" strokeWidth="1" />
-      <line x1="160" y1="74" x2="160" y2="120" stroke="#B8966B" strokeWidth="0.8" strokeDasharray="2 2" />
+      <path
+        d="M 134 120 V 82 C 134 68 186 68 186 82 V 120 Z"
+        fill="#FAF6F0"
+        stroke="#8C263E"
+        strokeWidth="1.4"
+      />
+      <path
+        d="M 142 120 V 87 C 142 76 178 76 178 87 V 120 Z"
+        fill="#8C263E"
+        fillOpacity="0.06"
+        stroke="#B8966B"
+        strokeWidth="1"
+      />
+      <line
+        x1="160"
+        y1="74"
+        x2="160"
+        y2="120"
+        stroke="#B8966B"
+        strokeWidth="0.8"
+        strokeDasharray="2 2"
+      />
 
       {/* Flanking Decorative Pillars */}
       <line x1="102" y1="62" x2="102" y2="120" stroke="#B8966B" strokeWidth="1.2" />
@@ -151,7 +223,15 @@ const VenuePalaceIllustration: FC<{ className?: string }> = ({ className = "w-fu
 
 // Location Pin SVG Icon
 const LocationPinIcon: FC<{ className?: string }> = ({ className = "w-3.5 h-3.5" }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
     <circle cx="12" cy="10" r="3" />
   </svg>
@@ -159,14 +239,30 @@ const LocationPinIcon: FC<{ className?: string }> = ({ className = "w-3.5 h-3.5"
 
 // Phone Call SVG Icon
 const PhoneCallIcon: FC<{ className?: string }> = ({ className = "w-3 h-3" }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
   </svg>
 );
 
 // WhatsApp SVG Icon
 const WhatsAppIcon: FC<{ className?: string }> = ({ className = "w-3 h-3" }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
   </svg>
 );
@@ -305,9 +401,7 @@ export function VenueSection({ id = "venue", data = defaultVenueData }: VenueSec
                 {/* Coordinator Name with Diamond Accent */}
                 <div className="flex items-center gap-1.5">
                   <span className="text-[7px] text-[#B8966B] select-none">◇</span>
-                  <h4 className="font-display text-sm font-bold text-[#3B2518]">
-                    {coord.name}
-                  </h4>
+                  <h4 className="font-display text-sm font-bold text-[#3B2518]">{coord.name}</h4>
                 </div>
 
                 {/* Coordinator Role */}

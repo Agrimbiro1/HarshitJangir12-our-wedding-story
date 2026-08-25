@@ -21,7 +21,10 @@ export function PhoneFrame({ children }: { children: ReactNode }) {
         />
 
         {/* Ambient backdrop overlay for soft visual balance */}
-        <div className="pointer-events-none absolute inset-0 bg-black/10 backdrop-blur-[1px]" aria-hidden />
+        <div
+          className="pointer-events-none absolute inset-0 bg-black/10 backdrop-blur-[1px]"
+          aria-hidden
+        />
 
         {/* Centered Phone Mockup Frame */}
         <div className="phone-scale relative z-10">

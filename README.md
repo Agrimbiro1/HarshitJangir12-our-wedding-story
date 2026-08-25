@@ -6,23 +6,23 @@ jitne bhi section hai sabko akdum simple bnana h kuch nhi krnaa bus font akdum a
 
 1 opening animation
 
-2 welcome section 
+2 welcome section
 
-3 couple section 
+3 couple section
 
-4 event section 
+4 event section
 
 5 family section
 
 6 countdown section
 
-7 memories section 
+7 memories section
 
-8 blessing section 
+8 blessing section
 
-9 RSVP 
+9 RSVP
 
-10 Venue section 
+10 Venue section
 
 11 last section
 
